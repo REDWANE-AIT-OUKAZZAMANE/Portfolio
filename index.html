@@ -221,19 +221,19 @@
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
-            <form action="send_email.php" method="post" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
-                    <div class="form-group col-sm-6">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                            <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
-                    </div>
+<!--                    <div class="form-group col-sm-6">-->
+<!--                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>-->
+<!--                    </div>-->
+<!--                    <div class="form-group col-sm-6">-->
+<!--                            <input type="email" name="email" class="form-control" placeholder="Enter Email" required>-->
+<!--                    </div>-->
                     <div class="form-group col-sm-12">
                         <label for="comment"></label><textarea name="message" id="comment" rows="6" class="form-control" placeholder="Write Something"></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                        <button  class="btn-outline-info btn btn-outline-primary mt-3" >Submit</button>
                     </div>
                 </div>  
             </form><!-- end of contact form -->
@@ -246,6 +246,8 @@
             <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="">Redwane Ait oukazzamane</a></p>
             <div class="social-links text-right m-auto ml-sm-auto">
                 <a href="https://mail.google.com/mail/#inbox?compose=GTvVlcRzBlNvJjDxjTXzTbRHDjdjLFkrGxCQbtTWnKnvrRCSCQDnFxDlgjHJmptqBMWLRLCJVDNfn" class="link" target="_blank"><i class="ti-google"></i></a>
+                <a href="https://www.linkedin.com/in/redwane-ait-oukazzamane-34648b115/" class="link" target="_blank"><i class="ti-linkedin"></i></a>
+
             </div>
         </footer>
     </div> <!-- end of page footer -->
@@ -271,6 +273,10 @@
         document.querySelector('.btn-rounded').addEventListener('click', function() {
             window.open('https://drive.google.com/uc?export=download&id=1MsuDOFJ3GfyhTWHBt6sFCj4RRwSpMpDb', '_blank');
         });
+        document.querySelector('.btn-outline-info').addEventListener('click', function() {
+            window.open('https://mail.google.com/mail/#inbox?compose=GTvVlcRzBlNvJjDxjTXzTbRHDjdjLFkrGxCQbtTWnKnvrRCSCQDnFxDlgjHJmptqBMWLRLCJVDNfn', '_blank');
+        });
+
     </script>
 
 </body>
