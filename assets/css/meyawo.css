@@ -103,6 +103,32 @@ abbr[data-original-title] {
           text-decoration-skip-ink: none;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.social-links .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Adjust as needed */
+  height: 60px; /* Adjust as needed */
+  font-size: 24px; /* Adjust size of icons */
+  background-color: #f0f0f0; /* Background color for visibility */
+  border-radius: 50%; /* Circular buttons */
+  text-decoration: none;
+  color: #333; /* Text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.social-links .link:hover {
+  background-color: #ddd; /* Hover background color */
+  color: #000; /* Hover text color */
+}
+
+
 address {
   margin-bottom: 1rem;
   font-style: normal;
