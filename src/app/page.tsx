@@ -64,8 +64,8 @@ export default function Home() {
                 />
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
-                Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">{personalInfo.name.split(" ")[0]}</span>
-              </h1>
+              Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">{personalInfo.name.split(" ")[0]}</span>
+            </h1>
             </div>
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
               {personalInfo.title}
@@ -108,19 +108,17 @@ export default function Home() {
           </motion.div>
           <motion.div 
             variants={fadeIn}
-            className="relative h-80 lg:h-96 rounded-lg overflow-hidden shadow-xl"
+            className="relative h-80 lg:h-90 rounded-lg overflow-hidden shadow-xl"
           >
-            <Image 
-              src="/images/projects/placeholder-portfolio.jpg" 
-              alt="Portfolio background"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-indigo-600/60 dark:bg-indigo-900/70"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              Full Stack Developer
+            <div className="absolute inset-0 -top-2">
+              <Image 
+                src="/images/projects/FullStack.png" 
+                alt="Portfolio background"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.div>
         </motion.div>
@@ -439,7 +437,7 @@ export default function Home() {
                   <div className="h-full w-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold p-4 text-center">
                     {project.liveUrl ? (
                       <Link href={project.title === "3D House Visualization" ? "https://3d-house-neon.vercel.app/" : project.title === "Weather App" ? "https://weather-app-phi-nine-54.vercel.app/" : project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full flex items-center justify-center">
-                        {project.title}
+                {project.title}
                       </Link>
                     ) : (
                       project.title
@@ -453,20 +451,20 @@ export default function Home() {
                 </h3>
                 <div className="h-20 hide-scrollbar mb-4">
                   <p className="text-gray-600 dark:text-gray-400">
-                    {project.description}
-                  </p>
+                  {project.description}
+                </p>
                 </div>
                 <div className="max-h-24 hide-scrollbar mb-4">
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
                         className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-sm rounded-full mb-2"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                 </div>
                 <div className="mt-auto pt-4 flex justify-between">
                   {project.privateRepo ? (
