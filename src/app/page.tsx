@@ -108,18 +108,16 @@ export default function Home() {
           </motion.div>
           <motion.div 
             variants={fadeIn}
-            className="relative h-80 lg:h-90 rounded-lg overflow-hidden shadow-xl"
+            className="relative h-100 lg:h-100 rounded-lg overflow-hidden shadow-xl"
           >
-            <div className="absolute inset-0 -top-2">
-              <Image 
-                src="/images/projects/FullStack.png" 
-                alt="Portfolio background"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
-            </div>
+            <Image 
+              src="/images/projects/FullStack.png" 
+              alt="Portfolio background"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
           </motion.div>
         </motion.div>
       </section>
