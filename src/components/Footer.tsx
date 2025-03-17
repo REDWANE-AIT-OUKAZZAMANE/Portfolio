@@ -16,6 +16,10 @@ const Footer = () => {
     { href: "/contact", label: "Contact", icon: <FiMessageSquare className="h-4 w-4 mr-2" /> },
   ];
 
+  // Split quick links into two columns
+  const firstColumnLinks = quickLinks.slice(0, 3);
+  const secondColumnLinks = quickLinks.slice(3);
+
   return (
     <footer className="bg-white dark:bg-gray-900 shadow-inner py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,19 +27,37 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center"
-                  >
-                    {link.icon}
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-2 gap-4">
+              {/* First Column */}
+              <ul className="space-y-2">
+                {firstColumnLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center"
+                    >
+                      {link.icon}
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Second Column */}
+              <ul className="space-y-2">
+                {secondColumnLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center"
+                    >
+                      {link.icon}
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact Info */}
