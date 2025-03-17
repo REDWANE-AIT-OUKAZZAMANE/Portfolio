@@ -20,6 +20,13 @@ export interface SocialLink {
   url: string;
 }
 
+export interface Certificate {
+  name: string;
+  issuer: string;
+  date: string;
+  url?: string;
+}
+
 export const personalInfo = {
   name: "REDWANE AIT OUKAZZAMANE",
   title: "Full Stack Developer",
@@ -39,26 +46,80 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  { name: "JavaScript", level: 5, category: "frontend" },
-  { name: "TypeScript", level: 4, category: "frontend" },
+  // Programming Languages
+  { name: "JavaScript", level: 5, category: "backend" },
+  { name: "TypeScript", level: 4, category: "backend" },
+  { name: "Java", level: 4, category: "backend" },
+  { name: "Python", level: 3, category: "backend" },
+  { name: "C", level: 3, category: "backend" },
+  { name: "PHP", level: 3, category: "backend" },
+  
+  // Frontend Technologies
   { name: "React", level: 5, category: "frontend" },
+  { name: "Vue.js", level: 4, category: "frontend" },
+  { name: "Angular", level: 3, category: "frontend" },
   { name: "Next.js", level: 4, category: "frontend" },
   { name: "HTML/CSS", level: 5, category: "frontend" },
   { name: "Tailwind CSS", level: 4, category: "frontend" },
+  { name: "Bootstrap", level: 4, category: "frontend" },
+  { name: "jQuery", level: 4, category: "frontend" },
+  { name: "Three.js", level: 4, category: "frontend" },
+  { name: "Vite", level: 4, category: "frontend" },
+  { name: "Sweetalert2", level: 3, category: "frontend" },
+  { name: "Pinia", level: 3, category: "frontend" },
+  { name: "Cannon.js", level: 3, category: "frontend" },
+  { name: "Cypress", level: 3, category: "frontend" },
+  
+  // Backend Technologies
   { name: "Node.js", level: 4, category: "backend" },
   { name: "Express", level: 4, category: "backend" },
-  { name: "MongoDB", level: 3, category: "backend" },
-  { name: "SQL", level: 3, category: "backend" },
+  { name: "NestJS", level: 3, category: "backend" },
+  { name: "Spring Boot", level: 4, category: "backend" },
+  { name: "Spring", level: 4, category: "backend" },
+  { name: "GraphQL", level: 3, category: "backend" },
+  { name: "Prisma", level: 3, category: "backend" },
+  
+  // Databases
+  { name: "MongoDB", level: 4, category: "backend" },
+  { name: "MySQL", level: 4, category: "backend" },
+  { name: "Oracle Database", level: 3, category: "backend" },
+  { name: "Apache", level: 3, category: "backend" },
+  
+  // Tools & Software
   { name: "Git", level: 4, category: "other" },
   { name: "Docker", level: 3, category: "other" },
-  { name: "Three.js", level: 4, category: "frontend" },
-  { name: "Java", level: 4, category: "backend" },
-  { name: "Spring Boot", level: 4, category: "backend" },
-  { name: "Oracle Database", level: 3, category: "backend" },
-  { name: "Vue.js", level: 4, category: "frontend" },
-  { name: "Cypress", level: 3, category: "frontend" },
-  { name: "Pinia", level: 3, category: "frontend" },
-  { name: "Cannon.js", level: 3, category: "frontend" }
+  { name: "Postman", level: 4, category: "other" },
+  { name: "VS Code", level: 5, category: "other" },
+  { name: "IntelliJ IDEA", level: 4, category: "other" },
+  { name: "Eclipse", level: 3, category: "other" },
+  { name: "Android Studio", level: 3, category: "other" },
+  { name: "Maven", level: 3, category: "other" },
+  { name: "Xampp", level: 3, category: "other" },
+  { name: "WampServer", level: 3, category: "other" },
+  { name: "Photoshop", level: 3, category: "other" },
+  { name: "Illustrator", level: 3, category: "other" },
+  { name: "Adobe Premiere Pro", level: 3, category: "other" }
+];
+
+export const certificates: Certificate[] = [
+  {
+    name: "Google Cybersecurity Professional",
+    issuer: "Google",
+    date: "2023",
+    url: "https://www.coursera.org/professional-certificates/google-cybersecurity"
+  },
+  {
+    name: "IBM Machine Learning with Python",
+    issuer: "IBM",
+    date: "2023",
+    url: "https://www.coursera.org/learn/machine-learning-with-python"
+  },
+  {
+    name: "EF SET Certificate",
+    issuer: "EF Education First",
+    date: "2022",
+    url: "https://www.efset.org/"
+  }
 ];
 
 export const projects: Project[] = [

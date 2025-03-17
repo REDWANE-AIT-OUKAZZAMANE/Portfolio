@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skills } from "@/data/portfolio-data";
+import { skills, certificates } from "@/data/portfolio-data";
+import { FiAward, FiExternalLink } from "react-icons/fi";
 
 export default function Skills() {
   const fadeIn = {
@@ -141,6 +142,62 @@ export default function Skills() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Certificates Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="mt-20"
+        >
+          <motion.h2 
+            variants={fadeIn}
+            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+          >
+            Certificates & Credentials
+          </motion.h2>
+          <motion.div 
+            variants={fadeIn}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {certificates.map((certificate, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              >
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
+                    <FiAward className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {certificate.name}
+                    </h3>
+                    <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+                      {certificate.issuer}
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+                      Issued: {certificate.date}
+                    </p>
+                    {certificate.url && (
+                      <a 
+                        href={certificate.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center mt-3 text-indigo-600 dark:text-indigo-400 hover:underline"
+                      >
+                        View Certificate <FiExternalLink className="ml-1" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
 
         {/* Skill Categories */}
         <motion.div
