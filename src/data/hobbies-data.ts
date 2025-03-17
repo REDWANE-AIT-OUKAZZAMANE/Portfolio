@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { FiCamera, FiMusic, FiBook, FiCode, FiGlobe, FiCoffee } from "react-icons/fi";
+import { FiCamera, FiMusic, FiBook, FiCode, FiGlobe, FiCoffee, FiMonitor } from "react-icons/fi";
 
 export interface Hobby {
   id: number;
@@ -41,8 +41,8 @@ export const hobbies: Hobby[] = [
   },
   {
     id: 6,
-    title: "Coffee Brewing",
-    description: "I've developed an appreciation for the art of coffee brewing. Experimenting with different beans, brewing methods, and techniques has become a relaxing ritual that starts my day on a positive note.",
-    icon: FiCoffee
+    title: "Gaming",
+    description: "Gaming is my way to unwind and explore virtual worlds. I enjoy both competitive multiplayer games and immersive story-driven experiences. Gaming has taught me problem-solving skills and the value of persistence.",
+    icon: FiMonitor
   }
 ]; 
