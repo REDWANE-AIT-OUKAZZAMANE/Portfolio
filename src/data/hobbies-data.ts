@@ -1,0 +1,48 @@
+import { IconType } from 'react-icons';
+import { FiCamera, FiMusic, FiBook, FiCode, FiGlobe, FiCoffee } from "react-icons/fi";
+
+export interface Hobby {
+  id: number;
+  title: string;
+  description: string;
+  icon: IconType;
+}
+
+export const hobbies: Hobby[] = [
+  {
+    id: 1,
+    title: "Photography",
+    description: "I enjoy capturing moments through my lens, especially landscapes and street photography. Photography helps me see the world from different perspectives and appreciate the beauty in everyday scenes.",
+    icon: FiCamera
+  },
+  {
+    id: 2,
+    title: "Music",
+    description: "Music is a big part of my life. I enjoy playing guitar and discovering new genres and artists. My playlist ranges from classical to electronic music, depending on my mood and what I'm working on.",
+    icon: FiMusic
+  },
+  {
+    id: 3,
+    title: "Reading",
+    description: "I'm an avid reader with interests spanning from science fiction and fantasy to technical books and biographies. Reading helps me unwind and continuously learn new things outside of my professional field.",
+    icon: FiBook
+  },
+  {
+    id: 4,
+    title: "Side Projects",
+    description: "Beyond my professional work, I enjoy coding personal projects that let me experiment with new technologies and creative ideas without constraints. These projects are my playground for innovation.",
+    icon: FiCode
+  },
+  {
+    id: 5,
+    title: "Traveling",
+    description: "Exploring new places, experiencing different cultures, and meeting people from around the world is something I'm passionate about. Each journey brings new perspectives and inspirations to my life and work.",
+    icon: FiGlobe
+  },
+  {
+    id: 6,
+    title: "Coffee Brewing",
+    description: "I've developed an appreciation for the art of coffee brewing. Experimenting with different beans, brewing methods, and techniques has become a relaxing ritual that starts my day on a positive note.",
+    icon: FiCoffee
+  }
+]; 
