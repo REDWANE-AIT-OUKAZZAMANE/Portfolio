@@ -125,35 +125,48 @@ export const certificates: Certificate[] = [
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Squarefeet CRM",
+    description: "A comprehensive CRM solution for real estate management, featuring lead optimization, asset management, and transaction tracking. The platform unifies all types of leasing (Standard, Specialty, and Media) into a single integrated solution, enabling unmatched commercial efficiency.",
+    technologies: ["Vue.js", "React", "NestJS", "GraphQL", "Prisma", "CRM", "GitLab", "Nginx"],
+    privateRepo: true,
+    liveUrl: "https://www.squarefeet.cloud/fr/accueil/",
+    image: "/images/projects/squarefeet.png"
+  },
+  {
+    id: 2,
     title: "Authentikeys E-commerce",
     description: "A modern e-commerce platform for tech products featuring product categories, brand showcases, and a blog section. Includes user authentication, shopping cart, and payment integration.",
     technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
     privateRepo: true,
-    liveUrl: "https://www.authentikeys.com"
-  },
-  {
-    id: 2,
-    title: "Ecomy - Mechanical Keyboard Store",
-    description: "A fully-fledged e-commerce web store for mechanical keyboards with responsive design, shopping cart functionality, and optimized user experience. Features include persistent shopping cart, dynamic product pages, and comprehensive testing.",
-    technologies: ["Vue.js", "TypeScript", "Tailwind CSS", "Pinia", "Cypress", "Vite"],
-    githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/Ecomy",
-    liveUrl: "https://ecomy-alpha.vercel.app"
+    liveUrl: "https://www.authentikeys.com",
+    image: "/images/projects/authentikeys.png"
   },
   {
     id: 3,
+    title: "KIIIBS - Mechanical Keyboard Store",
+    description: "A fully-fledged e-commerce web store for mechanical keyboards with responsive design, shopping cart functionality, and optimized user experience. Features include persistent shopping cart, dynamic product pages, and comprehensive testing.",
+    technologies: ["Vue.js", "TypeScript", "Tailwind CSS", "Pinia", "Cypress", "Vite"],
+    githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/Ecomy",
+    liveUrl: "https://ecomy-alpha.vercel.app",
+    image: "/images/projects/Keyboard-ecom.png"
+  },
+  {
+    id: 4,
     title: "SWAG - 3D Racing Game",
     description: "A fast-paced 3D racing game where players dodge obstacles, push their car to top speed, and cover massive distances. Features include obstacle avoidance mechanics, damage system, speedometer, tachometer, rearview mirror, and beautiful 3D graphics.",
     technologies: ["Three.js", "Cannon.js", "JavaScript", "HTML/CSS"],
     githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/swag",
-    liveUrl: "https://swag-hazel.vercel.app"
+    liveUrl: "https://swag-hazel.vercel.app",
+    image: "/images/projects/game.png"
   },
   {
-    id: 4,
+    id: 5,
     title: "3D House Visualization",
     description: "An interactive 3D house visualization project with realistic textures, lighting, and animations. Features include a dynamic day/night cycle, interactive camera controls, and responsive design.",
     technologies: ["Three.js", "JavaScript", "Vite", "GSAP", "dat.GUI"],
     githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/3d-house",
-    liveUrl: "https://vercel.com/redwane-ait-oukazzamanes-projects/3d-house"
+    liveUrl: "https://vercel.com/redwane-ait-oukazzamanes-projects/3d-house",
+    image: "/images/projects/house.png"
   },
   {
     id: 6,
@@ -161,7 +174,8 @@ export const projects: Project[] = [
     description: "A comprehensive IT support ticket management system with user authentication, ticket creation and management, real-time status updates, priority-based handling, and a threaded comments system.",
     technologies: ["Java", "Spring Boot", "Oracle Database", "Java Swing", "Docker"],
     githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/it-support-system",
-    liveUrl: ""
+    liveUrl: "",
+    image: "/images/projects/itSupport.png"
   },
   {
     id: 7,
@@ -169,7 +183,8 @@ export const projects: Project[] = [
     description: "A weather dashboard that displays current weather conditions and forecasts for multiple locations.",
     technologies: ["JavaScript", "HTML/CSS", "OpenWeather API"],
     githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/weather-app",
-    liveUrl: "https://weather-app-phi-nine-54.vercel.app/"
+    liveUrl: "https://weather-app-phi-nine-54.vercel.app/",
+    image: "/images/projects/weather.png"
   }
 ];
 

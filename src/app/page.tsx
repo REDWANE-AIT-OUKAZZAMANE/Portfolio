@@ -227,219 +227,24 @@ export default function Home() {
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col h-full"
             >
               <div className="h-48 relative overflow-hidden">
-                {project.title === "Authentikeys E-commerce" ? (
-                  <>
-                    {project.liveUrl ? (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
-                        <Image 
-                          src="/images/projects/authentikeys.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ) : (
-                      <>
-                        <Image 
-                          src="/images/projects/authentikeys.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </>
-                    )}
-                  </>
-                ) : project.title === "Ecomy - Mechanical Keyboard Store" ? (
-                  <>
-                    {project.liveUrl ? (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
-                        <Image 
-                          src="/images/projects/Keyboard-ecom.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ) : (
-                      <>
-                        <Image 
-                          src="/images/projects/Keyboard-ecom.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </>
-                    )}
-                  </>
-                ) : project.title === "SWAG - 3D Racing Game" ? (
-                  <>
-                    {project.liveUrl ? (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
-                        <Image 
-                          src="/images/projects/game.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ) : (
-                      <>
-                        <Image 
-                          src="/images/projects/game.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </>
-                    )}
-                  </>
-                ) : project.title === "3D House Visualization" ? (
-                  <>
-                    {project.liveUrl ? (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
-                        <Image 
-                          src="/images/projects/house.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ) : (
-                      <>
-                        <Image 
-                          src="/images/projects/house.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </>
-                    )}
-                  </>
-                ) : project.title === "IT Support System" ? (
-                  <>
-                    {project.liveUrl ? (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
-                        <Image 
-                          src="/images/projects/itSupport.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ) : (
-                      <>
-                        <Image 
-                          src="/images/projects/itSupport.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </>
-                    )}
-                  </>
-                ) : project.title === "Weather Dashboard" ? (
-                  <>
-                    {project.liveUrl ? (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
-                        <Image 
-                          src="/images/projects/weather.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ) : (
-                      <>
-                        <Image 
-                          src="/images/projects/weather.png" 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
-                            {project.title}
-                          </h3>
-                        </div>
-                      </>
-                    )}
-                  </>
+                {project.image ? (
+                  <Link href={project.liveUrl || "#"} target="_blank" rel="noopener noreferrer" className="block h-full w-full group">
+                    <Image 
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                      <h3 className="text-white text-xl font-bold p-4 text-center drop-shadow-md">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </Link>
                 ) : (
                   <div className="h-full w-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold p-4 text-center">
-                    {project.liveUrl ? (
-                      <Link href={project.title === "3D House Visualization" ? "https://3d-house-neon.vercel.app/" : project.title === "Weather App" ? "https://weather-app-phi-nine-54.vercel.app/" : project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full w-full flex items-center justify-center">
-                {project.title}
-                      </Link>
-                    ) : (
-                      project.title
-                    )}
+                    {project.title}
                   </div>
                 )}
               </div>
