@@ -21,13 +21,9 @@ const PlaceholderImage: React.FC<PlaceholderImageProps> = ({ title, className = 
   
   return (
     <div 
-      className={`w-full h-full flex items-center justify-center ${className}`}
+      className={`w-full h-full ${className}`}
       style={{ backgroundColor: bgColor }}
-    >
-      <div className="text-white text-2xl font-bold">
-        {title.split(' ').map(word => word[0]).join('')}
-      </div>
-    </div>
+    />
   );
 };
 
