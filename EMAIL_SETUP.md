@@ -21,11 +21,14 @@ EmailJS allows you to send emails directly from client-side JavaScript without n
 3. **Create an Email Template**
    - Go to "Email Templates" in your dashboard
    - Click "Create New Template"
+   - **Important**: In the "Subject" field of the template, use: `Portfolio Contact: {{subject}}` or `{{email_subject}}`
    - Design your template with the following variables:
      - `{{from_name}}` - The name of the person contacting you
      - `{{from_email}}` - The email of the person contacting you
      - `{{subject}}` - The subject of the message
      - `{{message}}` - The message content
+     - `{{to_name}}` - Your name (as the recipient)
+     - `{{email_subject}}` - The formatted subject line (already includes "Portfolio Contact: ")
 
 4. **Configure Your Environment Variables**
    - Open the `.env.local` file in your project root
@@ -85,6 +88,12 @@ If you're not receiving emails:
 - Check your spam folder
 - Verify that your email account doesn't have additional security restrictions
 - Check the browser console or server logs for any error messages
+
+### Common Issues
+
+- **Subject not showing in emails**: Make sure your EmailJS template has `{{subject}}` or `{{email_subject}}` in the Subject field of the template
+- **Emails not being sent**: Check the browser console for any errors from EmailJS
+- **Emails going to spam**: Add your own email to your contacts list
 
 ## Security Notes
 

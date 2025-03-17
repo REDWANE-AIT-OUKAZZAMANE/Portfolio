@@ -18,6 +18,8 @@ export const sendEmail = async (formData: {
       from_email: formData.email,
       subject: formData.subject,
       message: formData.message,
+      email_subject: `Portfolio Contact: ${formData.subject}`,
+      to_name: 'Redwane',
     };
 
     const response = await emailjs.send(
