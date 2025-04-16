@@ -12,7 +12,7 @@ export interface Project {
 export interface Skill {
   name: string;
   level: number; // 1-5
-  category: 'frontend' | 'backend' | 'other';
+  category: 'frontend' | 'backend' | 'other' | 'language' | 'soft';
 }
 
 export interface SocialLink {
@@ -27,12 +27,31 @@ export interface Certificate {
   url?: string;
 }
 
+export interface Education {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  gpa: string;
+}
+
+export interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+}
+
 export const personalInfo = {
   name: "REDWANE AIT OUKAZZAMANE",
-  title: "Full Stack Developer",
-  bio: "Passionate full stack developer with experience in building modern web applications. I enjoy solving complex problems and creating intuitive user experiences.",
-  location: "Morocco",
-  email: "redwaneaitoukazzamane@gmail.com",
+  title: "FULLSTACK ENGINEER",
+  bio: "Creative Developer with 4 years of experience crafting sleek, scalable digital solutions. I blend code and creativity to build user-centric apps, from elegant UIs to robust backends. Known for delivering complex, enterprise-level projects with precision and flair across diverse industries.",
+  location: "Mers sultan, Casablanca, Morocco",
+  email: "redwane.aitoukazzamane@gmail.com",
+  phone: "+212-638106555",
+  website: "www.Oukazzamane.com",
   socialLinks: [
     {
       platform: "GitHub",
@@ -45,60 +64,101 @@ export const personalInfo = {
   ] as SocialLink[]
 };
 
+export const education: Education[] = [
+  {
+    degree: "Master of Science in Software Engineering",
+    institution: "National Schools of Applied Sciences",
+    location: "Tétouan",
+    period: "2021 - 2023",
+    gpa: "3.8 / 4.0"
+  },
+  {
+    degree: "Bachelor's degree in computer science",
+    institution: "Abdelmalek Essaâdi University",
+    location: "Tétouan",
+    period: "2018 - 2020",
+    gpa: "3.7 / 4.0"
+  }
+];
+
+export const experiences: Experience[] = [
+  {
+    title: "Full stack Engineer | Cybersecurity Specialist",
+    company: "Squarefeet",
+    location: "Morocco",
+    startDate: "2025",
+    endDate: "PRESENT",
+    description: [
+      "Automated marketing materials, leasing documents, and floor plans in one CRM.",
+      "Ensured system scalability to handle multiple clients.",
+      "Optimized performance and consistency across devices."
+    ]
+  },
+  {
+    title: "Full stack Developer",
+    company: "Hahn Software SARL",
+    location: "Morocco",
+    startDate: "2023",
+    endDate: "2024",
+    description: [
+      "Built a complete IT support system from scratch, improving internal ticket handling.",
+      "Implemented CI/CD pipelines using Jenkins and Docker for efficient deployment."
+    ]
+  },
+  {
+    title: "Software Engineer",
+    company: "Soclicagency",
+    location: "Morocco",
+    startDate: "2022",
+    endDate: "2023",
+    description: [
+      "Designed and developed tailor-made web solutions for multiple B2B clients.",
+      "Integrated REST APIs and third-party services to extend platform functionality."
+    ]
+  }
+];
+
 export const skills: Skill[] = [
-  // Programming Languages
-  { name: "JavaScript", level: 5, category: "backend" },
-  { name: "TypeScript", level: 4, category: "backend" },
-  { name: "Java", level: 4, category: "backend" },
-  { name: "Python", level: 3, category: "backend" },
-  { name: "C", level: 3, category: "backend" },
-  { name: "PHP", level: 3, category: "backend" },
-  
-  // Frontend Technologies
-  { name: "React", level: 5, category: "frontend" },
-  { name: "Vue.js", level: 4, category: "frontend" },
-  { name: "Angular", level: 3, category: "frontend" },
-  { name: "Next.js", level: 4, category: "frontend" },
-  { name: "HTML/CSS", level: 5, category: "frontend" },
-  { name: "Tailwind CSS", level: 4, category: "frontend" },
-  { name: "Bootstrap", level: 4, category: "frontend" },
-  { name: "jQuery", level: 4, category: "frontend" },
-  { name: "Three.js", level: 4, category: "frontend" },
-  { name: "Vite", level: 4, category: "frontend" },
-  { name: "Sweetalert2", level: 3, category: "frontend" },
-  { name: "Pinia", level: 3, category: "frontend" },
-  { name: "Cannon.js", level: 3, category: "frontend" },
-  { name: "Cypress", level: 3, category: "frontend" },
-  
-  // Backend Technologies
+  // Programming Languages - Backend
+  { name: "Java", level: 5, category: "backend" },
+  { name: "Spring Boot", level: 5, category: "backend" },
   { name: "Node.js", level: 4, category: "backend" },
-  { name: "Express", level: 4, category: "backend" },
-  { name: "NestJS", level: 3, category: "backend" },
-  { name: "Spring Boot", level: 4, category: "backend" },
-  { name: "Spring", level: 4, category: "backend" },
-  { name: "GraphQL", level: 3, category: "backend" },
-  { name: "Prisma", level: 3, category: "backend" },
+  { name: "NestJS", level: 4, category: "backend" },
+  { name: "Python", level: 3, category: "backend" },
+  { name: "PHP", level: 3, category: "backend" },
   
   // Databases
   { name: "MongoDB", level: 4, category: "backend" },
   { name: "MySQL", level: 4, category: "backend" },
-  { name: "Oracle Database", level: 3, category: "backend" },
-  { name: "Apache", level: 3, category: "backend" },
+  
+  // Frontend Technologies
+  { name: "React", level: 5, category: "frontend" },
+  { name: "Angular", level: 4, category: "frontend" },
+  { name: "Vue.js", level: 4, category: "frontend" },
+  { name: "Next.js", level: 4, category: "frontend" },
+  { name: "Flutter", level: 3, category: "frontend" },
+  { name: "HTML/CSS", level: 5, category: "frontend" },
+  { name: "Tailwind CSS", level: 4, category: "frontend" },
+  
+  // Languages
+  { name: "English", level: 4, category: "language" },
+  { name: "French", level: 3, category: "language" },
+  { name: "German", level: 2, category: "language" },
+  { name: "Arabic", level: 5, category: "language" },
+  
+  // Soft Skills
+  { name: "Project Management", level: 4, category: "soft" },
+  { name: "Effective Communication", level: 4, category: "soft" },
+  { name: "Critical Thinking", level: 4, category: "soft" },
+  { name: "Problem Solving", level: 5, category: "soft" },
+  { name: "Teamwork", level: 4, category: "soft" },
   
   // Tools & Software
   { name: "Git", level: 4, category: "other" },
   { name: "Docker", level: 3, category: "other" },
-  { name: "Postman", level: 4, category: "other" },
-  { name: "VS Code", level: 5, category: "other" },
-  { name: "IntelliJ IDEA", level: 4, category: "other" },
-  { name: "Eclipse", level: 3, category: "other" },
-  { name: "Android Studio", level: 3, category: "other" },
-  { name: "Maven", level: 3, category: "other" },
-  { name: "Xampp", level: 3, category: "other" },
-  { name: "WampServer", level: 3, category: "other" },
-  { name: "Photoshop", level: 3, category: "other" },
-  { name: "Illustrator", level: 3, category: "other" },
-  { name: "Adobe Premiere Pro", level: 3, category: "other" }
+  { name: "Jenkins", level: 3, category: "other" },
+  { name: "CI/CD", level: 3, category: "other" },
+  { name: "Cybersecurity", level: 4, category: "other" }
 ];
 
 export const certificates: Certificate[] = [
@@ -185,32 +245,5 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/REDWANE-AIT-OUKAZZAMANE/weather-app",
     liveUrl: "https://weather-app-phi-nine-54.vercel.app/",
     image: "/images/projects/weather.png"
-  }
-];
-
-export const experiences = [
-  {
-    title: "Full Stack Developer",
-    company: "Tech Solutions Inc.",
-    location: "Remote",
-    startDate: "Jan 2023",
-    endDate: "Present",
-    description: "Developing and maintaining web applications using React, Node.js, and MongoDB. Implementing new features and optimizing existing code."
-  },
-  {
-    title: "Frontend Developer",
-    company: "Web Innovations",
-    location: "Casablanca, Morocco",
-    startDate: "Jun 2021",
-    endDate: "Dec 2022",
-    description: "Built responsive user interfaces using React and implemented state management with Redux. Collaborated with designers to create intuitive user experiences."
-  },
-  {
-    title: "Web Development Intern",
-    company: "Digital Agency",
-    location: "Rabat, Morocco",
-    startDate: "Jan 2021",
-    endDate: "May 2021",
-    description: "Assisted in developing websites using HTML, CSS, and JavaScript. Learned about modern web development practices and tools."
   }
 ]; 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FiGithub, FiLinkedin, FiMail, FiHome, FiUser, FiCode, FiBriefcase, FiHeart, FiMessageSquare } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiHome, FiUser, FiCode, FiBriefcase, FiHeart, FiMessageSquare, FiPhone, FiGlobe, FiMapPin } from "react-icons/fi";
 import { personalInfo } from "@/data/portfolio-data";
 
 const Footer = () => {
@@ -63,13 +63,32 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Contact</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-2">{personalInfo.location}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-2 flex items-center">
+              <FiMapPin className="h-4 w-4 mr-2" />
+              {personalInfo.location}
+            </p>
             <Link
               href={`mailto:${personalInfo.email}`}
               className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center mb-2"
             >
               <FiMail className="h-4 w-4 mr-2" />
               {personalInfo.email}
+            </Link>
+            <Link
+              href={`tel:${personalInfo.phone}`}
+              className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center mb-2"
+            >
+              <FiPhone className="h-4 w-4 mr-2" />
+              {personalInfo.phone}
+            </Link>
+            <Link
+              href={`https://${personalInfo.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center mb-2"
+            >
+              <FiGlobe className="h-4 w-4 mr-2" />
+              {personalInfo.website}
             </Link>
             <div className="flex space-x-4 mt-4">
               {personalInfo.socialLinks.map((link) => (

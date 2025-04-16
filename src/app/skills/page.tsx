@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skills, certificates } from "@/data/portfolio-data";
-import { FiAward, FiExternalLink } from "react-icons/fi";
+import { skills, certificates, education } from "@/data/portfolio-data";
+import { FiAward, FiExternalLink, FiBook } from "react-icons/fi";
 
 export default function Skills() {
   const fadeIn = {
@@ -27,6 +27,8 @@ export default function Skills() {
   // Group skills by category
   const frontendSkills = skills.filter(skill => skill.category === 'frontend');
   const backendSkills = skills.filter(skill => skill.category === 'backend');
+  const languageSkills = skills.filter(skill => skill.category === 'language');
+  const softSkills = skills.filter(skill => skill.category === 'soft');
   const otherSkills = skills.filter(skill => skill.category === 'other');
 
   const SkillBar = ({ name, level }: { name: string; level: number }) => (
@@ -58,18 +60,67 @@ export default function Skills() {
             variants={fadeIn}
             className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
           >
-            My Skills
+            My Skills & Education
           </motion.h1>
           <motion.p 
             variants={fadeIn}
             className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
           >
-            Here's a comprehensive list of my technical skills and proficiency levels
+            A comprehensive overview of my technical skills, languages, and educational background
           </motion.p>
         </motion.div>
 
+        {/* Education */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="mb-16"
+        >
+          <motion.h2 
+            variants={fadeIn}
+            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+          >
+            Education
+          </motion.h2>
+          <motion.div 
+            variants={fadeIn}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              >
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
+                    <FiBook className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+                      {edu.institution} | {edu.location}
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+                      {edu.period}
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+                      GPA: {edu.gpa}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Frontend Skills */}
           <motion.div
             initial="hidden"
@@ -133,10 +184,61 @@ export default function Skills() {
               <span className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-3">
                 <span className="text-blue-600 dark:text-blue-400 text-sm font-bold">OT</span>
               </span>
-              Other Skills
+              Technical Tools
             </motion.h2>
             <motion.div variants={fadeIn}>
               {otherSkills.map((skill) => (
+                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Languages and Soft Skills */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {/* Languages */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
+          >
+            <motion.h2 
+              variants={fadeIn}
+              className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <span className="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-3">
+                <span className="text-green-600 dark:text-green-400 text-sm font-bold">LG</span>
+              </span>
+              Languages
+            </motion.h2>
+            <motion.div variants={fadeIn}>
+              {languageSkills.map((skill) => (
+                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Soft Skills */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
+          >
+            <motion.h2 
+              variants={fadeIn}
+              className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <span className="w-8 h-8 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mr-3">
+                <span className="text-yellow-600 dark:text-yellow-400 text-sm font-bold">SS</span>
+              </span>
+              Soft Skills
+            </motion.h2>
+            <motion.div variants={fadeIn}>
+              {softSkills.map((skill) => (
                 <SkillBar key={skill.name} name={skill.name} level={skill.level} />
               ))}
             </motion.div>
@@ -196,66 +298,6 @@ export default function Skills() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Skill Categories */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="mt-20"
-        >
-          <motion.h2 
-            variants={fadeIn}
-            className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center"
-          >
-            Skill Categories
-          </motion.h2>
-          <motion.div 
-            variants={fadeIn}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 p-8 rounded-lg shadow-md text-white">
-              <h3 className="text-xl font-bold mb-4">Frontend Development</h3>
-              <p className="mb-6">
-                Creating responsive, interactive, and user-friendly interfaces using modern frontend technologies.
-              </p>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Responsive Web Design</li>
-                <li>Single Page Applications</li>
-                <li>UI/UX Implementation</li>
-                <li>State Management</li>
-                <li>Performance Optimization</li>
-              </ul>
-            </div>
-            <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-lg shadow-md text-white">
-              <h3 className="text-xl font-bold mb-4">Backend Development</h3>
-              <p className="mb-6">
-                Building robust server-side applications, APIs, and database integrations.
-              </p>
-              <ul className="list-disc list-inside space-y-2">
-                <li>RESTful API Design</li>
-                <li>Database Management</li>
-                <li>Authentication & Authorization</li>
-                <li>Server-side Rendering</li>
-                <li>Microservices Architecture</li>
-              </ul>
-            </div>
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-lg shadow-md text-white">
-              <h3 className="text-xl font-bold mb-4">Development Tools</h3>
-              <p className="mb-6">
-                Utilizing industry-standard tools and practices for efficient development workflows.
-              </p>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Version Control (Git)</li>
-                <li>CI/CD Pipelines</li>
-                <li>Containerization</li>
-                <li>Testing & Debugging</li>
-                <li>Agile Development</li>
-              </ul>
-            </div>
           </motion.div>
         </motion.div>
       </div>
