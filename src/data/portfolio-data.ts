@@ -57,7 +57,7 @@ export const personalInfo = {
   location: "Mers sultan, Casablanca, Morocco",
   email: "redwane.aitoukazzamane@gmail.com",
   phone: "+212-638106555",
-  website: "www.Oukazzamane.com",
+  // website: "www.Oukazzamane.com",
   socialLinks: [
     {
       platform: "GitHub",
