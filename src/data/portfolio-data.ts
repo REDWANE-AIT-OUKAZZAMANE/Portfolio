@@ -50,7 +50,18 @@ export interface Experience {
   description: string[];
 }
 
-export const personalInfo = {
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  bio: string;
+  location: string;
+  email: string;
+  phone: string;
+  website?: string;
+  socialLinks: SocialLink[];
+}
+
+export const personalInfo: PersonalInfo = {
   name: "REDWANE AIT OUKAZZAMANE",
   title: "FULLSTACK ENGINEER",
   bio: "Creative Developer with 4 years of experience crafting sleek, scalable digital solutions. I blend code and creativity to build user-centric apps, from elegant UIs to robust backends. Known for delivering complex, enterprise-level projects with precision and flair across diverse industries.",

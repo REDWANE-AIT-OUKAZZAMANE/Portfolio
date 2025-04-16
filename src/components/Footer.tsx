@@ -81,15 +81,17 @@ const Footer = () => {
               <FiPhone className="h-4 w-4 mr-2" />
               {personalInfo.phone}
             </Link>
-            <Link
-              href={`https://${personalInfo.website}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center mb-2"
-            >
-              <FiGlobe className="h-4 w-4 mr-2" />
-              {personalInfo.website}
-            </Link>
+            {personalInfo.website && (
+              <Link
+                href={`https://${personalInfo.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center mb-2"
+              >
+                <FiGlobe className="h-4 w-4 mr-2" />
+                {personalInfo.website}
+              </Link>
+            )}
             <div className="flex space-x-4 mt-4">
               {personalInfo.socialLinks.map((link) => (
                 <Link
