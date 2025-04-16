@@ -92,6 +92,15 @@ export default function Home() {
     };
   };
 
+  const repelAnimation = {
+    scale: 1.3,
+    rotate: [0, 15, -15, 0],
+    transition: { duration: 0.4 },
+    y: 20,
+    x: 20,
+    zIndex: 10
+  };
+
   // Featured projects (show only 3)
   const featuredProjects = projects.slice(0, 3);
 
@@ -105,13 +114,21 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
         {/* Floating Programming Icons - Positioned as background */}
-        <div className="absolute inset-0 right-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 right-0 overflow-hidden">
           {floatingIcons.map((icon, index) => (
             <motion.div
               key={index}
               variants={floatAnimation(index)}
               initial="hidden"
               animate="visible"
+              whileHover={{
+                scale: 1.3,
+                rotate: [0, 15, -15, 0],
+                transition: { duration: 0.4 },
+                y: index % 2 === 0 ? -20 : 20,
+                x: index % 2 === 0 ? -20 : 20,
+                zIndex: 10
+              }}
               style={{ 
                 position: 'absolute',
                 right: `${index % 4 * 60 + 20}px`, 
@@ -120,7 +137,7 @@ export default function Home() {
                 height: icon.size,
                 color: icon.color
               }}
-              className="flex items-center justify-center opacity-30 lg:opacity-100"
+              className="flex items-center justify-center opacity-30 lg:opacity-100 cursor-pointer"
             >
               <icon.icon size={icon.size} />
             </motion.div>
