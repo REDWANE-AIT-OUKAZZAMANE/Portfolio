@@ -105,7 +105,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
         {/* Floating Programming Icons - positioned absolutely */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
           {floatingIcons.map((icon, index) => (
             <motion.div
               key={index}
@@ -129,12 +129,12 @@ export default function Home() {
         </div>
 
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           initial="hidden"
           animate={controls}
           variants={staggerContainer}
         >
-          <motion.div variants={fadeIn}>
+          <motion.div variants={fadeIn} className="z-20 relative">
             <div className="flex items-center gap-4 mb-6">
               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-indigo-600 dark:border-indigo-400 shadow-md">
                 <Image 
@@ -147,13 +147,13 @@ export default function Home() {
                 />
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
-              Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">{personalInfo.name.split(" ")[0]}</span>
-            </h1>
+                Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">{personalInfo.name.split(" ")[0]}</span>
+              </h1>
             </div>
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
               {personalInfo.title}
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm p-4 rounded-lg">
               {personalInfo.bio}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -190,8 +190,8 @@ export default function Home() {
             </div>
           </motion.div>
           
-          {/* Empty spacer div to maintain layout */}
-          <div className="h-96 lg:h-auto"></div>
+          {/* Second column to maintain the grid layout */}
+          <div className="hidden lg:block"></div>
         </motion.div>
       </section>
 
