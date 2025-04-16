@@ -377,7 +377,7 @@ export default function Home() {
                   )}
                   {project.liveUrl || project.title === "3D House Visualization" || project.title === "Weather App" ? (
                     <Link
-                      href={project.title === "3D House Visualization" ? "https://3d-house-neon.vercel.app/" : 
+                      href={project.title === "3D House Visualization" ? "https://3d-house-esd2baqim-redwane-ait-oukazzamanes-projects.vercel.app/" : 
                            project.title === "Weather App" ? "https://weather-app-phi-nine-54.vercel.app/" : 
                            (project.liveUrl || "#")}
                       target="_blank"
