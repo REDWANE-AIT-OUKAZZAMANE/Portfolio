@@ -3,13 +3,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
-import { FiMenu, FiX, FiCode } from "react-icons/fi";
+import { FiMenu, FiX, FiCode, FiSun, FiMoon } from "react-icons/fi";
 import { personalInfo } from "@/data/portfolio-data";
+import { useTheme } from "./ThemeProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const controls = useAnimation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -141,10 +143,36 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Theme toggle button */}
+            <button
+              onClick={toggleTheme}
+              className="ml-2 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <FiSun className="h-5 w-5" />
+              ) : (
+                <FiMoon className="h-5 w-5" />
+              )}
+            </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden items-center">
+          <div className="flex md:hidden items-center space-x-2">
+            {/* Theme toggle button for mobile */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <FiSun className="h-5 w-5" />
+              ) : (
+                <FiMoon className="h-5 w-5" />
+              )}
+            </button>
+            
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
