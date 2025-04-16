@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiMapPin, FiMail, FiCalendar, FiBriefcase, FiBook, FiGlobe } from "react-icons/fi";
-import { personalInfo, experiences } from "@/data/portfolio-data";
+import { personalInfo, experiences, education, languages } from "@/data/portfolio-data";
 
 export default function About() {
   const fadeIn = {
@@ -185,9 +185,8 @@ export default function About() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
-          className="mb-20"
         >
           <motion.h2 
             variants={scaleIn}
@@ -197,72 +196,30 @@ export default function About() {
           </motion.h2>
           <motion.div 
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Amazigh
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
-                Mother tongue
-              </p>
-            </motion.div>
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Arabic
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
-                Current
-              </p>
-            </motion.div>
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  French
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
-                Bilingual
-              </p>
-            </motion.div>
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  English
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
-                Current
-              </p>
-            </motion.div>
+            {languages.map((language, index) => (
+              <motion.div 
+                key={index}
+                variants={fadeIn}
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-md"
+              >
+                <div className="flex items-center mb-2">
+                  <span className="mr-2 text-2xl">{language.flag}</span>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {language.name}
+                  </h3>
+                </div>
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2">
+                  <div 
+                    className="bg-indigo-600 dark:bg-indigo-400 h-2.5 rounded-full"
+                    style={{ width: `${(language.level / 5) * 100}%` }}
+                  ></div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
@@ -358,89 +315,32 @@ export default function About() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiBook className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Bachelor's degree in mathematics and computer sciences (SMI)
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
-                Université Abdelmalek Essaadi, Tetouan, Morocco
-              </p>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-                <FiCalendar className="mr-2" />
-                <span>2019 - 2022</span>
-              </div>
-            </motion.div>
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiBook className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Telecommunications and network systems engineering
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
-                Tetouan National School of Applied Sciences (ENSA)
-              </p>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-                <FiCalendar className="mr-2" />
-                <span>2017 - 2019</span>
-              </div>
-            </motion.div>
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiBook className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Preparatory Class for Great Schools
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
-                Carnot, Méknes, Morocco (CPGE)
-              </p>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-                <FiCalendar className="mr-2" />
-                <span>2015 - 2017</span>
-              </div>
-              <p className="text-gray-600 dark:text-gray-400">
-                Field of study: Mathematics and Physics (MP)
-              </p>
-            </motion.div>
-            <motion.div 
-              variants={fadeIn}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-            >
-              <div className="flex items-center mb-2">
-                <FiBook className="mr-2 text-indigo-600 dark:text-indigo-400" />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Baccalaureate in Physics
-                </h3>
-              </div>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
-                Hassan II High School, Midelt, Morocco
-              </p>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-                <FiCalendar className="mr-2" />
-                <span>2014 - 2015</span>
-              </div>
-            </motion.div>
+            {education.map((edu, index) => (
+              <motion.div 
+                key={index}
+                variants={fadeIn}
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              >
+                <div className="flex items-center mb-2">
+                  <FiBook className="mr-2 text-indigo-600 dark:text-indigo-400" />
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {edu.degree}
+                  </h3>
+                </div>
+                <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
+                  {edu.institution}, {edu.location}
+                </p>
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <FiCalendar className="mr-2" />
+                  <span>{edu.period}</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400">
+                  GPA: {edu.gpa}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
