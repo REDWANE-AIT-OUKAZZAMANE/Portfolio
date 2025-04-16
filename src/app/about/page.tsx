@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiMapPin, FiMail, FiCalendar, FiBriefcase, FiBook, FiGlobe } from "react-icons/fi";
-import { personalInfo, experiences, education, languages } from "@/data/portfolio-data";
+import { personalInfo, experiences, education } from "@/data/portfolio-data";
 
 export default function About() {
   const fadeIn = {
@@ -185,8 +185,9 @@ export default function About() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
+          className="mb-20"
         >
           <motion.h2 
             variants={scaleIn}
@@ -196,30 +197,72 @@ export default function About() {
           </motion.h2>
           <motion.div 
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-4 gap-6"
           >
-            {languages.map((language, index) => (
-              <motion.div 
-                key={index}
-                variants={fadeIn}
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-md"
-              >
-                <div className="flex items-center mb-2">
-                  <span className="mr-2 text-2xl">{language.flag}</span>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {language.name}
-                  </h3>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2">
-                  <div 
-                    className="bg-indigo-600 dark:bg-indigo-400 h-2.5 rounded-full"
-                    style={{ width: `${(language.level / 5) * 100}%` }}
-                  ></div>
-                </div>
-              </motion.div>
-            ))}
+            <motion.div 
+              variants={fadeIn}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+            >
+              <div className="flex items-center mb-2">
+                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Amazigh
+                </h3>
+              </div>
+              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+                Mother tongue
+              </p>
+            </motion.div>
+            <motion.div 
+              variants={fadeIn}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+            >
+              <div className="flex items-center mb-2">
+                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Arabic
+                </h3>
+              </div>
+              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+                Current
+              </p>
+            </motion.div>
+            <motion.div 
+              variants={fadeIn}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+            >
+              <div className="flex items-center mb-2">
+                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  French
+                </h3>
+              </div>
+              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+                Bilingual
+              </p>
+            </motion.div>
+            <motion.div 
+              variants={fadeIn}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+            >
+              <div className="flex items-center mb-2">
+                <FiGlobe className="mr-2 text-indigo-600 dark:text-indigo-400" />
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  English
+                </h3>
+              </div>
+              <p className="text-indigo-600 dark:text-indigo-400 font-medium">
+                Current
+              </p>
+            </motion.div>
           </motion.div>
         </motion.div>
 
