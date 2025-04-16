@@ -6,6 +6,40 @@ import { motion, useAnimation } from "framer-motion";
 import { FiArrowRight, FiGithub, FiLinkedin, FiLock } from "react-icons/fi";
 import { personalInfo, projects, skills } from "@/data/portfolio-data";
 import { useEffect } from "react";
+import { 
+  SiJavascript, 
+  SiReact, 
+  SiNextdotjs, 
+  SiTailwindcss, 
+  SiNodedotjs, 
+  SiMongodb, 
+  SiTypescript, 
+  SiVuedotjs, 
+  SiAngular, 
+  SiPython, 
+  SiSpring, 
+  SiMysql, 
+  SiDocker 
+} from "react-icons/si";
+import { DiJava } from "react-icons/di";
+
+// Animation constants
+const floatingIcons = [
+  { icon: SiJavascript, color: "#F7DF1E", size: 40, initialX: 20, initialY: 20 },
+  { icon: SiReact, color: "#61DAFB", size: 50, initialX: 70, initialY: 60 },
+  { icon: SiNextdotjs, color: "#000000", size: 45, initialX: 180, initialY: 120 },
+  { icon: SiTailwindcss, color: "#06B6D4", size: 50, initialX: 300, initialY: 50 },
+  { icon: SiNodedotjs, color: "#339933", size: 40, initialX: 220, initialY: 180 },
+  { icon: SiMongodb, color: "#47A248", size: 38, initialX: 80, initialY: 220 },
+  { icon: SiTypescript, color: "#3178C6", size: 42, initialX: 250, initialY: 280 },
+  { icon: SiVuedotjs, color: "#4FC08D", size: 48, initialX: 150, initialY: 320 },
+  { icon: SiAngular, color: "#DD0031", size: 45, initialX: 350, initialY: 150 },
+  { icon: DiJava, color: "#007396", size: 52, initialX: 300, initialY: 220 },
+  { icon: SiPython, color: "#3776AB", size: 48, initialX: 120, initialY: 250 },
+  { icon: SiSpring, color: "#6DB33F", size: 40, initialX: 380, initialY: 300 },
+  { icon: SiMysql, color: "#4479A1", size: 44, initialX: 200, initialY: 350 },
+  { icon: SiDocker, color: "#2496ED", size: 46, initialX: 330, initialY: 380 }
+];
 
 export default function Home() {
   const controls = useAnimation();
@@ -31,6 +65,31 @@ export default function Home() {
         staggerChildren: 0.1
       }
     }
+  };
+
+  const floatAnimation = (index: number) => {
+    // Create unique random animation for each icon
+    const randomX = Math.sin(index) * 30;
+    const randomY = Math.cos(index) * 30;
+    const randomDuration = 10 + (index % 5) * 2;
+    const randomDelay = index * 0.2;
+    
+    return {
+      hidden: { opacity: 0, scale: 0 },
+      visible: {
+        opacity: [0.2, 0.8, 0.2],
+        scale: [0.8, 1.2, 0.8],
+        x: [randomX, -randomX, randomX],
+        y: [randomY, -randomY, randomY],
+        rotate: [0, 10, -10, 0],
+        transition: {
+          duration: randomDuration,
+          repeat: Infinity,
+          delay: randomDelay,
+          ease: "easeInOut"
+        }
+      }
+    };
   };
 
   // Featured projects (show only 3)
@@ -106,18 +165,32 @@ export default function Home() {
               ))}
             </div>
           </motion.div>
+          
+          {/* Animated Programming Icons */}
           <motion.div 
             variants={fadeIn}
-            className="relative h-100 lg:h-100 rounded-lg overflow-hidden shadow-xl"
+            className="relative h-96 rounded-lg overflow-hidden bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 shadow-xl"
           >
-            <Image 
-              src="/images/projects/FullStack.png" 
-              alt="Portfolio background"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
+            {floatingIcons.map((icon, index) => (
+              <motion.div
+                key={index}
+                variants={floatAnimation(index)}
+                initial="hidden"
+                animate="visible"
+                style={{ 
+                  position: 'absolute',
+                  left: icon.initialX, 
+                  top: icon.initialY,
+                  width: icon.size,
+                  height: icon.size,
+                  color: icon.color
+                }}
+                className="flex items-center justify-center"
+              >
+                <icon.icon size={icon.size} />
+              </motion.div>
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-indigo-50 to-transparent dark:from-gray-800 dark:to-transparent opacity-60"></div>
           </motion.div>
         </motion.div>
       </section>
