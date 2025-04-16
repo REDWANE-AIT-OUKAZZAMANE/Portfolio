@@ -103,9 +103,33 @@ export default function Home() {
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        {/* Floating Programming Icons - positioned absolutely */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {floatingIcons.map((icon, index) => (
+            <motion.div
+              key={index}
+              variants={floatAnimation(index)}
+              initial="hidden"
+              animate="visible"
+              style={{ 
+                position: 'absolute',
+                left: `${icon.initialX}px`, 
+                top: `${icon.initialY}px`,
+                width: icon.size,
+                height: icon.size,
+                color: icon.color,
+                zIndex: 10
+              }}
+              className="flex items-center justify-center"
+            >
+              <icon.icon size={icon.size} />
+            </motion.div>
+          ))}
+        </div>
+
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10"
           initial="hidden"
           animate={controls}
           variants={staggerContainer}
@@ -166,32 +190,8 @@ export default function Home() {
             </div>
           </motion.div>
           
-          {/* Animated Programming Icons */}
-          <motion.div 
-            variants={fadeIn}
-            className="relative h-96 rounded-lg overflow-hidden bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 shadow-xl"
-          >
-            {floatingIcons.map((icon, index) => (
-              <motion.div
-                key={index}
-                variants={floatAnimation(index)}
-                initial="hidden"
-                animate="visible"
-                style={{ 
-                  position: 'absolute',
-                  left: icon.initialX, 
-                  top: icon.initialY,
-                  width: icon.size,
-                  height: icon.size,
-                  color: icon.color
-                }}
-                className="flex items-center justify-center"
-              >
-                <icon.icon size={icon.size} />
-              </motion.div>
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-indigo-50 to-transparent dark:from-gray-800 dark:to-transparent opacity-60"></div>
-          </motion.div>
+          {/* Empty spacer div to maintain layout */}
+          <div className="h-96 lg:h-auto"></div>
         </motion.div>
       </section>
 
