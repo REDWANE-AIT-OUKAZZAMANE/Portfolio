@@ -104,6 +104,29 @@ export default function Home() {
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        {/* Floating Programming Icons - Positioned as background */}
+        <div className="absolute inset-0 right-0 overflow-hidden pointer-events-none">
+          {floatingIcons.map((icon, index) => (
+            <motion.div
+              key={index}
+              variants={floatAnimation(index)}
+              initial="hidden"
+              animate="visible"
+              style={{ 
+                position: 'absolute',
+                right: `${index % 4 * 60 + 20}px`, 
+                top: `${Math.floor(index / 4) * 80 + 40}px`,
+                width: icon.size,
+                height: icon.size,
+                color: icon.color
+              }}
+              className="flex items-center justify-center opacity-30 lg:opacity-100"
+            >
+              <icon.icon size={icon.size} />
+            </motion.div>
+          ))}
+        </div>
+        
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           initial="hidden"
@@ -166,29 +189,8 @@ export default function Home() {
             </div>
           </motion.div>
           
-          {/* Right side with floating icons */}
-          <div className="relative hidden lg:block h-96">
-            {/* Floating Programming Icons */}
-            {floatingIcons.map((icon, index) => (
-              <motion.div
-                key={index}
-                variants={floatAnimation(index)}
-                initial="hidden"
-                animate="visible"
-                style={{ 
-                  position: 'absolute',
-                  left: `${index % 3 * 120}px`, 
-                  top: `${Math.floor(index / 3) * 100 + 20}px`,
-                  width: icon.size,
-                  height: icon.size,
-                  color: icon.color
-                }}
-                className="flex items-center justify-center"
-              >
-                <icon.icon size={icon.size} />
-              </motion.div>
-            ))}
-          </div>
+          {/* Empty right column to maintain grid structure */}
+          <div className="hidden lg:block"></div>
         </motion.div>
       </section>
 
