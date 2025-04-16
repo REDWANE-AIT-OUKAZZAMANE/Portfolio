@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skills, certificates, education, languages } from "@/data/portfolio-data";
-import { FiAward, FiExternalLink, FiBook } from "react-icons/fi";
+import { FiAward, FiExternalLink, FiBook, FiGlobe } from "react-icons/fi";
 
 export default function Skills() {
   const fadeIn = {
@@ -27,6 +27,7 @@ export default function Skills() {
   // Group skills by category
   const frontendSkills = skills.filter(skill => skill.category === 'frontend');
   const backendSkills = skills.filter(skill => skill.category === 'backend');
+  const languageSkills = skills.filter(skill => skill.category === 'language');
   const softSkills = skills.filter(skill => skill.category === 'soft');
   const otherSkills = skills.filter(skill => skill.category === 'other');
 
@@ -39,25 +40,6 @@ export default function Skills() {
       <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <div 
           className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
-          style={{ width: `${level * 20}%` }}
-        ></div>
-      </div>
-    </div>
-  );
-
-  // Specialized component for languages with flags
-  const LanguageBar = ({ name, level, flag }: { name: string; level: number; flag?: string }) => (
-    <div className="mb-6">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-800 dark:text-gray-200 font-medium flex items-center">
-          {flag && <span className="mr-2 text-xl">{flag}</span>}
-          {name}
-        </span>
-        <span className="text-gray-600 dark:text-gray-400 text-sm">{level * 20}%</span>
-      </div>
-      <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-        <div 
-          className="h-full bg-gradient-to-r from-green-500 to-teal-600 rounded-full"
           style={{ width: `${level * 20}%` }}
         ></div>
       </div>
@@ -233,12 +215,21 @@ export default function Skills() {
             </motion.h2>
             <motion.div variants={fadeIn}>
               {languages.map((language) => (
-                <LanguageBar 
-                  key={language.name} 
-                  name={language.name} 
-                  level={language.level} 
-                  flag={language.flag} 
-                />
+                <div key={language.name} className="mb-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-gray-800 dark:text-gray-200 font-medium flex items-center">
+                      {language.flag && <span className="mr-2 text-xl">{language.flag}</span>}
+                      {language.name}
+                    </span>
+                    <span className="text-gray-600 dark:text-gray-400 text-sm">{language.level * 20}%</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-green-500 to-teal-600 rounded-full"
+                      style={{ width: `${language.level * 20}%` }}
+                    ></div>
+                  </div>
+                </div>
               ))}
             </motion.div>
           </motion.div>
