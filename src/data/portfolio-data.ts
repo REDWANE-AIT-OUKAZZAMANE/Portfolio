@@ -15,6 +15,12 @@ export interface Skill {
   category: 'frontend' | 'backend' | 'other' | 'language' | 'soft';
 }
 
+export interface Language {
+  name: string;
+  level: number; // 1-5
+  flag?: string;
+}
+
 export interface SocialLink {
   platform: string;
   url: string;
@@ -140,12 +146,6 @@ export const skills: Skill[] = [
   { name: "HTML/CSS", level: 5, category: "frontend" },
   { name: "Tailwind CSS", level: 4, category: "frontend" },
   
-  // Languages
-  { name: "English", level: 4, category: "language" },
-  { name: "French", level: 3, category: "language" },
-  { name: "German", level: 2, category: "language" },
-  { name: "Arabic", level: 5, category: "language" },
-  
   // Soft Skills
   { name: "Project Management", level: 4, category: "soft" },
   { name: "Effective Communication", level: 4, category: "soft" },
@@ -159,6 +159,13 @@ export const skills: Skill[] = [
   { name: "Jenkins", level: 3, category: "other" },
   { name: "CI/CD", level: 3, category: "other" },
   { name: "Cybersecurity", level: 4, category: "other" }
+];
+
+export const languages: Language[] = [
+  { name: "English", level: 4, flag: "🇬🇧" },
+  { name: "French", level: 3, flag: "🇫🇷" },
+  { name: "German", level: 2, flag: "🇩🇪" },
+  { name: "Arabic", level: 5, flag: "🇲🇦" }
 ];
 
 export const certificates: Certificate[] = [

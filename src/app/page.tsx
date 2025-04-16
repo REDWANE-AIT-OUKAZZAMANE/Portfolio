@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
         {/* Floating Programming Icons - Positioned as background */}
         <div className="absolute inset-0 right-0 overflow-hidden pointer-events-none">
           {floatingIcons.map((icon, index) => (

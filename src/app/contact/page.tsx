@@ -285,25 +285,6 @@ export default function Contact() {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
-                    <FiGlobe className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Website</h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      <a 
-                        href={`https://${personalInfo.website}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-indigo-600 dark:hover:text-indigo-400"
-                      >
-                        {personalInfo.website}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
                     <FiMapPin className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                   </div>
                   <div className="ml-4">
