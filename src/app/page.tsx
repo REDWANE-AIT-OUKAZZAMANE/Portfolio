@@ -25,20 +25,20 @@ import { DiJava } from "react-icons/di";
 
 // Animation constants
 const floatingIcons = [
-  { icon: SiJavascript, color: "#F7DF1E", size: 40, initialX: 20, initialY: 20 },
-  { icon: SiReact, color: "#61DAFB", size: 50, initialX: 70, initialY: 60 },
-  { icon: SiNextdotjs, color: "#000000", size: 45, initialX: 180, initialY: 120 },
-  { icon: SiTailwindcss, color: "#06B6D4", size: 50, initialX: 300, initialY: 50 },
-  { icon: SiNodedotjs, color: "#339933", size: 40, initialX: 220, initialY: 180 },
-  { icon: SiMongodb, color: "#47A248", size: 38, initialX: 80, initialY: 220 },
-  { icon: SiTypescript, color: "#3178C6", size: 42, initialX: 250, initialY: 280 },
-  { icon: SiVuedotjs, color: "#4FC08D", size: 48, initialX: 150, initialY: 320 },
-  { icon: SiAngular, color: "#DD0031", size: 45, initialX: 350, initialY: 150 },
-  { icon: DiJava, color: "#007396", size: 52, initialX: 300, initialY: 220 },
-  { icon: SiPython, color: "#3776AB", size: 48, initialX: 120, initialY: 250 },
-  { icon: SiSpring, color: "#6DB33F", size: 40, initialX: 380, initialY: 300 },
-  { icon: SiMysql, color: "#4479A1", size: 44, initialX: 200, initialY: 350 },
-  { icon: SiDocker, color: "#2496ED", size: 46, initialX: 330, initialY: 380 }
+  { icon: SiJavascript, color: "#F7DF1E", size: 60, initialX: 20, initialY: 20 },
+  { icon: SiReact, color: "#61DAFB", size: 70, initialX: 70, initialY: 60 },
+  { icon: SiNextdotjs, color: "#000000", size: 65, initialX: 180, initialY: 120 },
+  { icon: SiTailwindcss, color: "#06B6D4", size: 75, initialX: 300, initialY: 50 },
+  { icon: SiNodedotjs, color: "#339933", size: 65, initialX: 220, initialY: 180 },
+  { icon: SiMongodb, color: "#47A248", size: 60, initialX: 80, initialY: 220 },
+  { icon: SiTypescript, color: "#3178C6", size: 68, initialX: 250, initialY: 280 },
+  { icon: SiVuedotjs, color: "#4FC08D", size: 72, initialX: 150, initialY: 320 },
+  { icon: SiAngular, color: "#DD0031", size: 70, initialX: 350, initialY: 150 },
+  { icon: DiJava, color: "#007396", size: 75, initialX: 300, initialY: 220 },
+  { icon: SiPython, color: "#3776AB", size: 72, initialX: 120, initialY: 250 },
+  { icon: SiSpring, color: "#6DB33F", size: 65, initialX: 380, initialY: 300 },
+  { icon: SiMysql, color: "#4479A1", size: 68, initialX: 200, initialY: 350 },
+  { icon: SiDocker, color: "#2496ED", size: 70, initialX: 330, initialY: 380 }
 ];
 
 export default function Home() {
@@ -69,15 +69,15 @@ export default function Home() {
 
   const floatAnimation = (index: number) => {
     // Create unique random animation for each icon
-    const randomX = Math.sin(index) * 30;
-    const randomY = Math.cos(index) * 30;
+    const randomX = Math.sin(index) * 40;
+    const randomY = Math.cos(index) * 40;
     const randomDuration = 10 + (index % 5) * 2;
     const randomDelay = index * 0.2;
     
     return {
       hidden: { opacity: 0, scale: 0 },
       visible: {
-        opacity: [0.2, 0.8, 0.2],
+        opacity: [0.3, 0.9, 0.3],
         scale: [0.8, 1.2, 0.8],
         x: [randomX, -randomX, randomX],
         y: [randomY, -randomY, randomY],
@@ -93,7 +93,7 @@ export default function Home() {
   };
 
   const repelAnimation = {
-    scale: 1.3,
+    scale: 2,
     rotate: [0, 15, -15, 0],
     transition: { duration: 0.4 },
     y: 20,
@@ -122,7 +122,7 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               whileHover={{
-                scale: 1.3,
+                scale: 2.2,
                 rotate: [0, 15, -15, 0],
                 transition: { duration: 0.4 },
                 y: index % 2 === 0 ? -20 : 20,
@@ -131,13 +131,13 @@ export default function Home() {
               }}
               style={{ 
                 position: 'absolute',
-                right: `${index % 4 * 60 + 20}px`, 
-                top: `${Math.floor(index / 4) * 80 + 40}px`,
+                right: `${index % 4 * 90 + 30}px`, 
+                top: `${Math.floor(index / 4) * 120 + 60}px`,
                 width: icon.size,
                 height: icon.size,
                 color: icon.color
               }}
-              className="flex items-center justify-center opacity-30 lg:opacity-100 cursor-pointer"
+              className="flex items-center justify-center opacity-40 lg:opacity-100 cursor-pointer"
             >
               <icon.icon size={icon.size} />
             </motion.div>
